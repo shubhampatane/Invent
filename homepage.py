@@ -13,7 +13,7 @@ from customer import Ui_Customer
 from login_stock import Ui_Dialog_stock_login
 from login_pricing import Ui_Dialog_pricing_login
 from login_contact import Ui_Dialog_customer_login
-from update_pass import  Ui_Dialog_update_pass
+from update_pass import Ui_Dialog_update_pass
 
 class Ui_Homepage(object):
     def openStock(self):
@@ -351,6 +351,11 @@ class Ui_Homepage(object):
         self.actionAbout = QtWidgets.QAction(Homepage)
         self.actionAbout.setObjectName("actionAbout")
         self.actionChange_Password = QtWidgets.QAction(Homepage)
+        self.pushButton_8.clicked.connect(self.openStock)
+        self.pushButton_6.clicked.connect(self.openPricing)
+        self.pushButton_3.clicked.connect(self.openCustomer)
+        self.display_msg = QtWidgets.QMessageBox()
+        self.display_msg.setIcon(QtWidgets.QMessageBox.Information)
         self.actionChange_Password.setObjectName("actionChange_Password")
         self.menuManage.addAction(self.actionChange_Password)
         self.actionChange_Password.triggered.connect(self.change_pass)
